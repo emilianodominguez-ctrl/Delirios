@@ -8,167 +8,139 @@
     
     <style>
         :root {
-            --bg: #fdfaf6;
-            --accent: #8b0000; /* Rojo elegante de tus rosas */
-            --text: #2c2c2c;
-            --soft-pink: #f9e8e8;
+            --bg-pastel: #fff5f5; /* Rosa muy pálido */
+            --accent-pink: #fbc2c2; /* Rosa pastel fuerte */
+            --soft-peach: #fff0e6; /* Durazno pastel */
+            --deep-rose: #8b0000;
+            --text: #4a4a4a;
         }
 
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg);
+            background: linear-gradient(135deg, var(--bg-pastel) 0%, var(--soft-peach) 100%);
             color: var(--text);
-            overflow-x: hidden;
         }
 
-        /* Header con Estilo */
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: white;
-            border-bottom: 1px solid #eee;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
         }
+
         .main-logo {
-            max-width: 160px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+            max-width: 140px;
+            border-radius: 50%;
         }
 
-        /* Sección Quiénes Somos / Atractivo */
-        .intro-text {
-            max-width: 800px;
-            margin: 60px auto;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .intro-text h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-style: italic;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-        .intro-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            font-weight: 300;
-            color: #555;
-        }
-
-        /* Contenedores de Imágenes Especiales */
-        .featured-promo {
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-            transition: transform 0.5s ease;
-        }
-        .featured-promo:hover {
-            transform: translateY(-5px);
-        }
-        .flyer-full {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        /* Títulos de sección */
-        .title-divider {
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 80px 0 40px;
-            position: relative;
-        }
-        .title-divider::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: var(--accent);
-            margin: 15px auto;
-        }
-
-        /* Galería Estilo Revista */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-            transition: 0.6s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Footer de Acción */
-        .cta-footer {
-            background: #fff;
-            padding: 100px 20px;
-            text-align: center;
-            border-top: 1px solid #eee;
-        }
-        .btn-container {
-            margin-top: 30px;
+        /* Flyers más pequeños */
+        .promo-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
+            padding: 40px 20px;
         }
+
+        .flyer-small {
+            max-width: 400px; /* Tamaño reducido */
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 5px solid white;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: 20px auto 50px;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-text h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--deep-rose);
+            font-style: italic;
+        }
+
+        /* Galería Estética */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 4px solid white;
+            transition: 0.3s;
+        }
+
+        .gallery-item img:hover {
+            border-color: var(--accent-pink);
+            transform: translateY(-5px);
+        }
+
+        /* Pasos de compra pastel */
+        .steps-section {
+            background: white;
+            padding: 60px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .steps-img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        footer {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
         .btn {
-            padding: 20px 45px;
+            padding: 18px 40px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            font-size: 0.8rem;
+            display: inline-block;
+            margin: 10px;
+            transition: 0.3s;
         }
-        .btn-wa { background: #25d366; color: white; box-shadow: 0 10px 20px rgba(37,211,102,0.2); }
-        .btn-ig { background: #000; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .btn:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
 
-        @media (max-width: 768px) {
-            .intro-text h2 { font-size: 1.8rem; }
-            .gallery-item img { height: 350px; }
+        .btn-wa { background: #25d366; color: white; }
+        .btn-ig { background: #e1306c; color: white; } /* Color Instagram pastelizado */
+
+        .btn:hover {
+            filter: brightness(1.1);
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="WhatsApp Image 2026-01-29 at 11.13.13 AM.jpeg" alt="Delirios Logo" class="main-logo">
+        <img src="WhatsApp Image 2026-01-29 at 11.13.13 AM.jpeg" alt="Logo Delirios" class="main-logo">
     </header>
 
+    <div class="promo-container">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM.jpeg" class="flyer-small" alt="Temporada">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (1).jpeg" class="flyer-small" alt="Información">
+    </div>
+
     <section class="intro-text">
-        <h2>Creamos delírios inolvidables</h2>
-        <p>No solo vendemos flores, diseñamos momentos que se quedan en el alma. En <strong>Delirios CDMX</strong>, cada pétalo es seleccionado para contar tu historia. Desde el romance clásico hasta detalles modernos, transformamos la naturaleza en el regalo perfecto.</p>
+        <h2>Detalles que florecen</h2>
+        <p>En Delirios CDMX creemos que cada flor tiene un mensaje único. Nuestra pasión es ayudarte a enviar amor, gratitud y alegría a través de arreglos diseñados con el corazón.</p>
     </section>
-
-    <div class="featured-promo">
-        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM.jpeg" alt="Temporada" class="flyer-full">
-    </div>
-
-    <div class="featured-promo" style="max-width: 700px;">
-        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (1).jpeg" alt="Info Pedidos" class="flyer-full">
-    </div>
-
-    <h2 class="title-divider">Inspiración del Mes</h2>
 
     <div class="gallery-grid">
         <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (11).jpeg"></div>
@@ -182,20 +154,17 @@
         <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (2).jpeg"></div>
     </div>
 
-    <h2 class="title-divider">Hazlo Realidad</h2>
+    <section class="steps-section">
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--deep-rose);">Proceso de Compra</h2>
+        <img src="WhatsApp Image 2026-01-29 at 11.13.24 AM.jpeg" class="steps-img" alt="Pasos">
+    </section>
 
-    <div class="featured-promo" style="max-width: 600px;">
-        <img src="WhatsApp Image 2026-01-29 at 11.13.24 AM.jpeg" alt="Cómo Comprar" class="flyer-full">
-    </div>
-
-    <footer class="cta-footer">
-        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 10px;">¿Ya tienes un favorito?</h2>
-        <p>Escríbenos y agenda tu envío hoy mismo.</p>
+    <footer>
         <div class="btn-container">
-            <a href="https://wa.me/525515663776?text=Hola!%20Me%20encantó%20su%20página,%20me%20gustaría%20cotizar%20un%20arreglo" class="btn btn-wa">Ordenar por WhatsApp</a>
-            <a href="https://www.instagram.com/delirios.cdmx" target="_blank" class="btn btn-ig">Ver en Instagram</a>
+            <a href="https://wa.me/525515663776" class="btn btn-wa">Pedir por WhatsApp</a>
+            <a href="https://www.instagram.com/delirios.cdmx" target="_blank" class="btn btn-ig">Instagram Oficial</a>
         </div>
-        <p style="margin-top: 60px; font-size: 0.7rem; color: #999;">DELIRIOS CDMX | CIUDAD DE MÉXICO</p>
+        <p style="margin-top: 40px; opacity: 0.5;">DELIRIOS CDMX &copy; 2026</p>
     </footer>
 
 </body>
