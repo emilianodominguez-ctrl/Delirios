@@ -5,166 +5,172 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delirios CDMX | Arte Floral</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-pastel: #fff5f5; /* Rosa muy pálido */
-            --accent-pink: #fbc2c2; /* Rosa pastel fuerte */
-            --soft-peach: #fff0e6; /* Durazno pastel */
-            --deep-rose: #8b0000;
-            --text: #4a4a4a;
+            --bg-pastel: #fffaf5; /* Fondo crema suave */
+            --accent-red: #8b0000;
+            --text-dark: #333;
+            --white: #ffffff;
         }
 
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--bg-pastel) 0%, var(--soft-peach) 100%);
-            color: var(--text);
+            background-color: var(--bg-pastel);
+            color: var(--text-dark);
         }
 
+        /* Logo Central */
         header {
             text-align: center;
             padding: 30px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
+            background: var(--white);
         }
-
         .main-logo {
             max-width: 140px;
-            border-radius: 50%;
         }
 
-        /* Flyers más pequeños */
-        .promo-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 40px 20px;
-        }
-
-        .flyer-small {
-            max-width: 400px; /* Tamaño reducido */
-            width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 5px solid white;
-        }
-
-        .intro-text {
-            max-width: 700px;
-            margin: 20px auto 50px;
+        /* Texto Atractivo */
+        .intro {
             text-align: center;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 0 20px;
         }
-
-        .intro-text h2 {
+        .intro h1 {
             font-family: 'Playfair Display', serif;
-            color: var(--deep-rose);
+            font-size: 2.2rem;
             font-style: italic;
+            color: var(--accent-red);
         }
 
-        /* Galería Estética */
-        .gallery-grid {
+        /* Ajuste de Flyers (No gigantes) */
+        .promo-container {
+            max-width: 600px; /* Tamaño controlado */
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .flyer {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            display: block;
+        }
+
+        /* Galería */
+        .gallery-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            margin: 60px 0 30px;
+            font-size: 1.8rem;
+        }
+        .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 15px;
-            padding: 20px;
             max-width: 1100px;
             margin: 0 auto;
+            padding: 20px;
         }
-
-        .gallery-item img {
+        .gallery img {
             width: 100%;
             height: 380px;
             object-fit: cover;
             border-radius: 10px;
-            border: 4px solid white;
             transition: 0.3s;
         }
-
-        .gallery-item img:hover {
-            border-color: var(--accent-pink);
-            transform: translateY(-5px);
+        .gallery img:hover {
+            transform: scale(1.02);
         }
 
-        /* Pasos de compra pastel */
-        .steps-section {
-            background: white;
-            padding: 60px 20px;
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .steps-img {
-            max-width: 500px;
-            width: 100%;
-            border-radius: 15px;
-        }
-
+        /* Botones con Logos */
         footer {
-            padding: 80px 20px;
             text-align: center;
+            padding: 60px 20px;
+            background: var(--white);
+            margin-top: 40px;
         }
-
+        .btn-box {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
         .btn {
-            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            display: inline-block;
-            margin: 10px;
+            font-size: 0.9rem;
             transition: 0.3s;
+            color: white;
         }
+        .btn-wa { background: #25d366; }
+        .btn-ig { background: #E1306C; }
+        .btn:hover { transform: translateY(-3px); opacity: 0.9; }
 
-        .btn-wa { background: #25d366; color: white; }
-        .btn-ig { background: #e1306c; color: white; } /* Color Instagram pastelizado */
-
-        .btn:hover {
-            filter: brightness(1.1);
-            transform: scale(1.05);
+        @media (max-width: 600px) {
+            .gallery img { height: 300px; }
+            .intro h1 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="WhatsApp Image 2026-01-29 at 11.13.13 AM.jpeg" alt="Logo Delirios" class="main-logo">
+        <img src="WhatsApp Image 2026-01-29 at 11.13.13 AM.jpeg" alt="Delirios Logo" class="main-logo">
     </header>
 
+    <section class="intro">
+        <h1>Creamos delirios inolvidables</h1>
+        <p>En Delirios CDMX, transformamos flores frescas en mensajes directos al corazón. Cada arreglo es una obra de arte diseñada para cautivar.</p>
+    </section>
+
     <div class="promo-container">
-        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM.jpeg" class="flyer-small" alt="Temporada">
-        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (1).jpeg" class="flyer-small" alt="Información">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM.jpeg" class="flyer" alt="Promo Enero">
     </div>
 
-    <section class="intro-text">
-        <h2>Detalles que florecen</h2>
-        <p>En Delirios CDMX creemos que cada flor tiene un mensaje único. Nuestra pasión es ayudarte a enviar amor, gratitud y alegría a través de arreglos diseñados con el corazón.</p>
-    </section>
-
-    <div class="gallery-grid">
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (11).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (10).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (9).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (8).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (7).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (6).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (5).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (4).jpeg"></div>
-        <div class="gallery-item"><img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (2).jpeg"></div>
+    <div class="promo-container">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (1).jpeg" class="flyer" alt="Información">
     </div>
 
-    <section class="steps-section">
-        <h2 style="font-family: 'Playfair Display', serif; color: var(--deep-rose);">Proceso de Compra</h2>
-        <img src="WhatsApp Image 2026-01-29 at 11.13.24 AM.jpeg" class="steps-img" alt="Pasos">
-    </section>
+    <h2 class="gallery-title">Inspiración Floral</h2>
+    
+    <div class="gallery">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (11).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (10).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (9).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (8).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (7).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (6).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (5).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (4).jpeg">
+        <img src="WhatsApp Image 2026-01-29 at 11.09.59 AM (2).jpeg">
+    </div>
+
+    <h2 class="gallery-title">Tu pedido a un clic</h2>
+
+    <div class="promo-container">
+        <img src="WhatsApp Image 2026-01-29 at 11.13.24 AM.jpeg" class="flyer" alt="Pasos">
+    </div>
 
     <footer>
-        <div class="btn-container">
-            <a href="https://wa.me/525515663776" class="btn btn-wa">Pedir por WhatsApp</a>
-            <a href="https://www.instagram.com/delirios.cdmx" target="_blank" class="btn btn-ig">Instagram Oficial</a>
+        <p style="font-style: italic;">"Donde las flores se vuelven delirios..."</p>
+        <div class="btn-box">
+            <a href="https://wa.me/525515663776" class="btn btn-wa">
+                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> WhatsApp Directo
+            </a>
+            <a href="https://www.instagram.com/delirios.cdmx" class="btn btn-ig">
+                <i class="fab fa-instagram" style="font-size: 1.2rem;"></i> Instagram
+            </a>
         </div>
-        <p style="margin-top: 40px; opacity: 0.5;">DELIRIOS CDMX &copy; 2026</p>
+        <p style="margin-top: 40px; font-size: 0.7rem; color: #aaa;">DELIRIOS CDMX | 2026</p>
     </footer>
 
 </body>
